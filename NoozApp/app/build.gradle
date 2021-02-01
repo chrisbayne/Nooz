@@ -7,6 +7,11 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    buildConfigField "String", "API_KEY", localProperties.getProperty("apiKey")
+
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
     defaultConfig {
         applicationId "com.chrisbayne.noozapp"
         minSdkVersion 21
